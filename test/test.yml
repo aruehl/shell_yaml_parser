@@ -1,0 +1,61 @@
+---
+
+will_work:
+  string: value
+  number: 42
+  float: 3.14
+  url: http://www.my-domain.net
+  mail: name@post.email
+  dollar_sign: I love $USER
+  comment_after_hash: an#hash # and a comment
+  inline_comment: something #comment
+  empty_hash_commented: #comment
+  multiple_dashes: abc---xyz
+
+  single_quotes:
+    hashtag1: '#hashtag'
+    hashtag2: 'text #hashtag'
+    hashtag3: 'text#hashtag'
+    dollar_sign: 'I love $USER'
+    comment_in_string: 'a string with # a comment'
+
+  double_quotes:
+    hashtag1: '#hashtag'
+    hashtag2: 'text #hashtag'
+    hashtag3: 'text#hashtag'
+    dollar_sign: "I love $USER"
+    comment_in_string: "a string with # a comment"
+
+  lists:
+    - color: red
+      form: 'circle'
+    -
+      color: green
+
+      form: "square"
+    - deeper:
+        list:
+          - 0
+          - 1
+          - 2
+        another_list:
+          - 3
+          - 4
+          - 5
+
+specials:
+  dash-property: OK
+  dot.property: OK
+  multi-dash-property: OK
+  multi.dot.property: OK
+  -starting-dash-property: OK
+  .starting.dot.property: OK
+  _starting_underscore_property: OK
+
+wont_work:
+  inline_list: ["one", 'two', three]
+  multiple_spaces: abc   xyz
+  quotes_in_quotes: 'text with "quotes"'
+  multi_line_description: >
+            this text is to long
+            for one line
