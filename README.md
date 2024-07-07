@@ -1,6 +1,22 @@
 # yaml parser for shell (bash, zsh, ...)
 
-The parser kann read this file
+```
+source yaml_parser.sh
+
+# to show the generated output run
+yaml_parser::parse "your.yml
+
+# to use the variable, you need to eval the output
+eval $(yaml_parser::parse "test.yml")
+
+# if you like a prefix use
+eval $(yaml_parser::parse "your.yml" "prefix_")
+
+# to export all the variables
+eval $(yaml_parser::parse "your.yml" "prefix_" "true")
+```
+
+The parser can read yaml files like this
 
 ```yaml
 ---
@@ -162,4 +178,3 @@ prefix_wont_work_array[multiple_spaces]="abc   xyz";
 export prefix_wont_work_quotes_in_quotes="text with "quotes"";
 prefix_wont_work_array[quotes_in_quotes]="text with "quotes"";
 ```
-you can 'eval()' that and use it in your script.
