@@ -55,8 +55,10 @@ yaml_parser::parse() {
                 printf("%s%sarray[%s]=\"%s\";\n", prefix, path, key, value);
         } else {
             if (length(key) == 0)
+                printf("unset %s%s%sarray;\n", prefix, path, key);
                 printf("declare -g -a %s%s%sarray;\n", prefix, path, key);
             else
+                printf("unset %s%s%s_array;\n", prefix, path, key);
                 printf("declare -g -A %s%s%s_array;\n", prefix, path, key);
         }
     }' |
