@@ -24,8 +24,8 @@ yaml_parser::parse() {
         indent = length($1)/2;
         key    = $2;
         value  = $3;
-        prefix = "'"$prefix"'"
-        export = "'"$export"'"
+        prefix = "'"$prefix"'";
+        export = "'"$export"'" == "true" || "'"$export"'" == "export";
 
         keys[indent] = key;
         for (i in keys) {
