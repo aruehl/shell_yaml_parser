@@ -1,10 +1,12 @@
 # yaml parser for shell (bash, zsh, ...)
 
-```
+## usage
+
+```shell
 source yaml_parser.sh
 
 # to show the generated output run
-yaml_parser::parse "your.yml
+yaml_parser::parse "your.yml"
 
 # to use the variable, you need to eval the output
 eval $(yaml_parser::parse "test.yml")
@@ -13,8 +15,14 @@ eval $(yaml_parser::parse "test.yml")
 eval $(yaml_parser::parse "your.yml" "prefix_")
 
 # to export all the variables
-eval $(yaml_parser::parse "your.yml" "prefix_" "true")
+eval $(yaml_parser::parse "your.yml" "prefix_" "export")
 ```
+
+## restrictions
+
+The parser can only read files that have an indentation with 2 spaces each.
+
+## example
 
 The parser can read yaml files like this
 
